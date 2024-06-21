@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
+import { COLORS, QUERIES } from "../../constants";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
-        <Avatar alt="" src={avatar} />
+        <Avatar alt={`Profile picture of ${author}`} src={avatar} />
         <div>
           <AuthorName>{author}</AuthorName>
           <ArticleTitle>{title}</ArticleTitle>
@@ -17,6 +18,8 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  background: ${COLORS.gray[100]};
+  padding: 16px 0;
 `;
 
 const Avatar = styled.img`
@@ -25,6 +28,13 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  float: right;
+  margin-left: 20px;
+
+  @media ${QUERIES.tabletOnly} {
+    float: revert;
+    margin-left: 0;
+  }
 `;
 
 const AuthorName = styled.p`
