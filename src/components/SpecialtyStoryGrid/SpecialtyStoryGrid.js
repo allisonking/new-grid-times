@@ -59,9 +59,11 @@ const Wrapper = styled.div`
 `;
 
 const MarketsSection = styled.section`
-  padding-right: 16px;
-  margin-right: 16px;
-  border-right: 1px solid ${COLORS.gray[300]};
+  @media ${QUERIES.laptopAndUp} {
+    padding-right: 16px;
+    margin-right: 16px;
+    border-right: 1px solid ${COLORS.gray[300]};
+  }
 `;
 
 const MarketCards = styled.div`
